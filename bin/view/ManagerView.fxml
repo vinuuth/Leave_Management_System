@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane prefHeight="565.0" prefWidth="857.0" xmlns="http://javafx.com/javafx/8.0.241" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManagerController">
+  <children>
+    <StackPane prefHeight="424.0" prefWidth="569.0">
+      <children>
+        <VBox spacing="10.0">
+          <children>
+            <StackPane prefHeight="-1.0" prefWidth="-1.0" />
+          </children>
+        </VBox>
+      </children>
+    </StackPane>
+      <AnchorPane prefHeight="434.0" prefWidth="593.0">
+         <children>
+            <TabPane layoutX="-3.0" layoutY="58.0" prefHeight="488.0" prefWidth="838.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Apply">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="559.0" style="-fx-background-color: lightgrey;">
+                           <children>
+                              <ImageView fitHeight="290.0" fitWidth="450.0" layoutX="400.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../manager-view.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Group layoutX="4.0" layoutY="25.260417938232422" />
+                              <Text fill="#1e81b0" layoutX="1.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leave Type :">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font></Text>
+                              <Text fill="#1e81b0" layoutX="-1.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leave From :">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font></Text>
+                              <Text fill="#1e81b0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Leave To :">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font></Text>
+                              <Text fill="#1e81b0" layoutX="5.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reason :">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font></Text>
+                              <JFXComboBox fx:id="combobox" layoutX="94.0" layoutY="50.0" prefHeight="26.0" prefWidth="252.0" />
+                              <DatePicker fx:id="leavefrom" layoutX="95.0" layoutY="98.0" prefHeight="26.0" prefWidth="254.0" />
+                              <DatePicker fx:id="leaveto" layoutX="95.0" layoutY="146.0" prefHeight="26.0" prefWidth="258.0" />
+                              <JFXTextArea fx:id="reasonbox" focusColor="WHITE" layoutX="97.0" layoutY="194.0" prefHeight="110.0" prefWidth="264.0" style="-fx-background-color: #ffffff;" unFocusColor="WHITE" />
+                              <Button fx:id="applyleavebutton" layoutX="95.0" layoutY="336.0" mnemonicParsing="false" onAction="#onApplyLeave" prefHeight="26.0" prefWidth="194.0" text="Apply Leave" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="userdetails" onSelectionChanged="#event1" text="User details">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+                           <children>
+                              <Label layoutX="56.0" layoutY="118.0" text="User ID:" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="empidlabel" layoutX="149.0" layoutY="116.0" text="Label" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="57.0" layoutY="147.0" text="Name: " textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="namelabel" layoutX="149.0" layoutY="147.0" text="Label" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="56.0" layoutY="176.0" text="Email ID:" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="emailidlabel" layoutX="148.0" layoutY="176.0" text="Label" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="58.0" layoutY="202.0" text="Department" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="departmentlabel" layoutX="148.0" layoutY="202.0" text="Label" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="59.0" layoutY="231.0" text="DOB:" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="doblabel" layoutX="149.0" layoutY="231.0" text="Label" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="59.0" layoutY="260.0" text="Reports to:" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="reportstolabel" layoutX="148.0" layoutY="260.0" text="Label" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="59.0" layoutY="295.0" text="Designation:" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="designationlabel" layoutX="148.0" layoutY="295.0" text="Label" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="61.0" layoutY="324.0" text="Phone:" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="phonelabel" layoutX="149.0" layoutY="324.0" text="Label" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Italic" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" layoutX="276.0" layoutY="22.0" prefHeight="18.0" prefWidth="201.0" text="Leave Balances" />
+                              <BarChart fx:id="leavechart" layoutX="361.0" layoutY="67.0" prefHeight="346.0" prefWidth="447.0">
+                                 <xAxis>
+                                    <CategoryAxis animated="false" prefHeight="21.0" prefWidth="302.0" side="BOTTOM" />
+                                 </xAxis>
+                                 <yAxis>
+                                    <NumberAxis side="LEFT" />
+                                 </yAxis>
+                              </BarChart>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="pendingrequests" onSelectionChanged="#onpendclick" text="Pending Requests">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+                           <children>
+                              <Group layoutX="4.0" layoutY="25.260417938232422" />
+                              <Button fx:id="revokeleave" layoutX="329.0" layoutY="373.0" mnemonicParsing="false" onAction="#deleteleave" prefHeight="40.0" prefWidth="180.0" text="Revoke Leave" />
+                              <TableView fx:id="leavemodifytable" layoutX="7.0" layoutY="5.0" prefHeight="340.0" prefWidth="828.0">
+                                <columns>
+                                    <TableColumn fx:id="tid" prefWidth="75.0" text="Leave ID" />
+                                  <TableColumn fx:id="MEditTableLeaveType" prefWidth="112.00001525878906" text="Leave Type" />
+                                  <TableColumn fx:id="MEditTableLeaveFrom" prefWidth="87.20001220703125" text="Leave From" />
+                                    <TableColumn fx:id="MEditTableLeaveTo" prefWidth="100.79998779296875" text="Leave To" />
+                                    <TableColumn fx:id="MEditTableNod" prefWidth="106.4000244140625" text="Number of Days" />
+                                    <TableColumn fx:id="MEditTableLeaveComments" prefWidth="344.7999267578125" text="Reason" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="leavehistory" onSelectionChanged="#event3" text="Leave History">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="lhtable" prefHeight="425.0" prefWidth="838.0">
+                                 <columns>
+                                    <TableColumn fx:id="tabcoltype" prefWidth="248.7999997138977" text="Leave Type" />
+                                    <TableColumn fx:id="tabcolfrom" prefWidth="148.80001831054688" text="From Date" />
+                                    <TableColumn fx:id="tabcolto" prefWidth="168.79998779296875" text="To Date" />
+                                    <TableColumn fx:id="tabcolnod" prefWidth="269.5999755859375" text="Number of days" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="ApproveTab" onSelectionChanged="#loadtable" text="Approve">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgrey;">
+                           <children>
+                              <Group layoutX="4.0" layoutY="25.260417938232422" />
+                              <TableView fx:id="approvetable" layoutX="5.0" layoutY="37.0" prefHeight="275.0" prefWidth="829.0">
+                                <columns>
+                                    <TableColumn fx:id="approvetid" prefWidth="75.0" text="Leave ID" />
+                                  <TableColumn fx:id="ATblEmployeeID" prefWidth="93.59997224807739" text="EMP ID" />
+                                    <TableColumn fx:id="ATblfname" prefWidth="95.20005798339844" text="FNAME" />
+                                  <TableColumn fx:id="ATblLeaveType" prefWidth="88.80001831054688" text="LeaveType" />
+                                    <TableColumn fx:id="ATblDateFrom" prefWidth="83.199951171875" text="DateFrom" />
+                                    <TableColumn fx:id="ATblDateTo" prefWidth="78.4000244140625" text="DateTo" />
+                                    <TableColumn fx:id="ATblNoOfDays" prefWidth="90.39990234375" text="NoOfDays" />
+                                    <TableColumn fx:id="ATblReason" prefWidth="300.800048828125" text="Reason" />
+                                </columns>
+                              </TableView>
+                              <Text fill="#1e81b0" layoutX="340.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLOYEE LEAVES" wrappingWidth="171.73670959472656">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="18.0" />
+                                 </font></Text>
+                              <Text fill="#1e81b0" layoutX="254.0" layoutY="363.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Action :" wrappingWidth="61.5667724609375">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font></Text>
+                              <JFXComboBox fx:id="ATblComboBoxAction" layoutX="341.0" layoutY="324.0" prefHeight="40.0" prefWidth="180.0" />
+                              <Button fx:id="ATblSubmitButton" layoutX="352.0" layoutY="405.0" mnemonicParsing="false" onAction="#onApprove" prefHeight="40.0" prefWidth="134.0" text="Submit" textFill="#1e81b0">
+                                 <font>
+                                    <Font name="Tahoma Bold" size="12.0" />
+                                 </font></Button>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+            <AnchorPane prefHeight="58.0" prefWidth="838.0" style="-fx-background-color: #1e81b0; -fx-border-width: 10Px;">
+               <children>
+                  <Text fill="WHITE" layoutX="323.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MANAGER VIEW" wrappingWidth="191.2105484008789">
+                     <font>
+                        <Font name="Tahoma Bold" size="24.0" />
+                     </font>
+                  </Text>
+            <Button fx:id="LogoutBtn" alignment="CENTER" defaultButton="true" layoutX="759.0" layoutY="7.0" mnemonicParsing="false" onAction="#onlogout" prefHeight="40.0" prefWidth="78.0" text="Logout" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+  </children>
+  <padding>
+    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    
+  </padding>
+</StackPane>

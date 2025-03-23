@@ -21,3 +21,9 @@ management system, and managers can approve those requests. The amount of leave 
 that employees might take was formerly manually recorded on sheets of paper. So, the main
 agenda of this project is to automate the leave management system of an organization and to
 maintain the leave records of all the employees in that organization.
+
+![image](https://github.com/user-attachments/assets/67d584c1-6085-4be5-a1d3-d90459a6ed55)
+![image](https://github.com/user-attachments/assets/0d07c198-8d4e-47ad-a35f-72561b51ea2c)
+![image](https://github.com/user-attachments/assets/ee5a8a41-8b0c-43a4-b6e0-1caee069a2a5)
+
+
